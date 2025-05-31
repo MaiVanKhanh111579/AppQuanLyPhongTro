@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AppQLPhongTro" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="CustomBottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemRippleColor">@null</item> <!-- Tắt ripple effect -->
+        <item name="android:background">@android:color/transparent</item> <!-- Đảm bảo background trong suốt -->
+    </style>
+
+    <style name="Theme.AppQLPhongTro" parent="Base.Theme.AppQLPhongTro" />
+</resources>
