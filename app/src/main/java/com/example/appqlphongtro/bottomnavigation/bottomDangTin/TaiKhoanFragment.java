@@ -10,11 +10,14 @@ import android.widget.ExpandableListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.example.appqlphongtro.R;
 import com.example.appqlphongtro.taikhoan.ExpandablelistAdapter;
 import com.example.appqlphongtro.taikhoan.GroupExpandablelistview;
 import com.example.appqlphongtro.taikhoan.ItemExpandablelistview;
+import com.example.appqlphongtro.taikhoan.qlthongtintk.QLThongTinTKFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +46,27 @@ public class TaiKhoanFragment extends Fragment {
 
         expandablelistAdapter = new ExpandablelistAdapter(mgroupExpandablelistview,mitemExpandablelistview);
         expandableListView.setAdapter(expandablelistAdapter);
+
+        expandableListView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
+            ItemExpandablelistview item = mitemExpandablelistview.get(mgroupExpandablelistview.get(groupPosition)).get(childPosition);
+            if (item.getName().equals("Quản lý tài khoản")) {
+                // Điều hướng đến QLThongTinTKFragment
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_qlthongtintk, new QLThongTinTKFragment());
+                transaction.addToBackStack(null); // Thêm vào back stack
+                transaction.commit();
+            }
+            return true;
+        });
+        // Trong onCreateView hoặc hàm setOnChildClickListener của bạn:
+        expandableListView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
+            ItemExpandablelistview item = mitemExpandablelistview.get(mgroupExpandablelistview.get(groupPosition)).get(childPosition);
+            if (item.getName().equals("Quản lý tài khoản")) {
+                // Dùng NavController để điều hướng
+                Navigation.findNavController(v).navigate(R.id.action_taiKhoanFragment_to_qLThongTinTKFragment);
+            }
+            return true;
+        });
 
         return view;
     }

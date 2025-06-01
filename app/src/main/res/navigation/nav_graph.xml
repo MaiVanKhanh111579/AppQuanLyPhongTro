@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_tongquan">
+
+    <!--TỔNG QUAN-->
+    <fragment
+        android:id="@+id/navigation_tongquan"
+        android:name="com.example.appqlphongtro.bottomnavigation.bottomDangTin.TongQuanFragment"
+        android:label="Tài khoản"
+        tools:layout="@layout/fragment_tongquan"/>
+
+    <!--TIN ĐĂNG-->
+    <fragment
+        android:id="@+id/navigation_tindang"
+        android:name="com.example.appqlphongtro.bottomnavigation.bottomDangTin.TinDangFragment"
+        android:label="Tin đăng"
+        tools:layout="@layout/fragment_tindang"/>
+
+    <!--KHÁCH HÀNG-->
+    <fragment
+        android:id="@+id/navigation_khachhang"
+        android:name="com.example.appqlphongtro.bottomnavigation.bottomDangTin.KhachHangFragment"
+        android:label="Khách hàng"
+        tools:layout="@layout/fragment_khachhang"/>
+
+    <!--TÀI KHOẢN-->
+    <fragment
+        android:id="@+id/navigation_taikhoan"
+        android:name="com.example.appqlphongtro.bottomnavigation.bottomDangTin.TaiKhoanFragment"
+        android:label="Tài khoản"
+        tools:layout="@layout/fragment_taikhoan">
+        <action
+            android:id="@+id/action_taiKhoanFragment_to_qLThongTinTKFragment"
+            app:destination="@id/qLThongTinTKFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/qLThongTinTKFragment"
+        android:name="com.example.appqlphongtro.taikhoan.qlthongtintk.QLThongTinTKFragment"
+        android:label="Quản lý tài khoản"
+        tools:layout="@layout/fragment_qlthongtintk"/>
+</navigation>
