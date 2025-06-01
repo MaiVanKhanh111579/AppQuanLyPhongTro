@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
-    
-    <!--ViewPager-->
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager2"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_nav"/>
+        app:navGraph="@navigation/nav_graph"
+        app:defaultNavHost="true"
+        tools:ignore="FragmentTagUsage" />
 
-
-    <!--BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
@@ -32,6 +30,4 @@
         app:itemRippleColor="@null"
         tools:ignore="VisualLintBottomNav" >
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
 </RelativeLayout>
