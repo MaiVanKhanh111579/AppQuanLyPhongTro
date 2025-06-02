@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         app:navGraph="@navigation/nav_graph"
         app:defaultNavHost="true"
+        android:layout_above="@id/bottom_nav"
         tools:ignore="FragmentTagUsage" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

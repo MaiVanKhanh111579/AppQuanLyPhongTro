@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,27 +44,41 @@ public class TaiKhoanFragment extends Fragment {
         mgroupExpandablelistview = new ArrayList<>(mitemExpandablelistview.keySet());
         expandableListView.setGroupIndicator(null);
 
-
         expandablelistAdapter = new ExpandablelistAdapter(mgroupExpandablelistview,mitemExpandablelistview);
         expandableListView.setAdapter(expandablelistAdapter);
-
         expandableListView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
             ItemExpandablelistview item = mitemExpandablelistview.get(mgroupExpandablelistview.get(groupPosition)).get(childPosition);
-            if (item.getName().equals("Quản lý tài khoản")) {
-                // Điều hướng đến QLThongTinTKFragment
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_qlthongtintk, new QLThongTinTKFragment());
-                transaction.addToBackStack(null); // Thêm vào back stack
-                transaction.commit();
-            }
-            return true;
-        });
-        // Trong onCreateView hoặc hàm setOnChildClickListener của bạn:
-        expandableListView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
-            ItemExpandablelistview item = mitemExpandablelistview.get(mgroupExpandablelistview.get(groupPosition)).get(childPosition);
-            if (item.getName().equals("Quản lý tài khoản")) {
-                // Dùng NavController để điều hướng
+            //--TIỆN ÍCH--\\
+            if (item.getName().equals("Quản lý thông tin")) {
                 Navigation.findNavController(v).navigate(R.id.action_taiKhoanFragment_to_qLThongTinTKFragment);
+            } else if (item.getName().equals("Bảo mật")) {
+                Navigation.findNavController(v).navigate(R.id.action_navigation_taikhoan_to_navigation_taikhoan_baomat);
+
+            }   else if (item.getName().equals("Đăng xuất")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
+            }
+            //--QUẢN LÝ TIN ĐĂNG--\\
+            else if (item.getName().equals("Đăng mới")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
+            } else if (item.getName().equals("Danh sách tin")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
+            } else if (item.getName().equals("Tin nháp")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
+            }
+            //--QUẢN LÝ TÀI CHÍNH--\\
+            else if (item.getName().equals("Thông tin số dư")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
+            } else if (item.getName().equals("Lịch sử giao dịch")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
+            } else if (item.getName().equals("Nhóm khuyến mãi")) {
+                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
+
             }
             return true;
         });
@@ -75,7 +90,7 @@ public class TaiKhoanFragment extends Fragment {
         Map<GroupExpandablelistview, List<ItemExpandablelistview>> MitemExpandablelistview = new LinkedHashMap<>();
 
         GroupExpandablelistview groupExpandablelistview1 = new GroupExpandablelistview(1, "Quản lý tin đăng");
-        GroupExpandablelistview groupExpandablelistview2 = new GroupExpandablelistview(2, "Quản lý khách hàng");
+        //GroupExpandablelistview groupExpandablelistview2 = new GroupExpandablelistview(2, "Quản lý khách hàng");
         GroupExpandablelistview groupExpandablelistview3 = new GroupExpandablelistview(3, "Quản lý tài chính");
         GroupExpandablelistview groupExpandablelistview4 = new GroupExpandablelistview(4, "Tiện ích");
 
@@ -84,10 +99,10 @@ public class TaiKhoanFragment extends Fragment {
         itemExpandablelistviewList1.add(new ItemExpandablelistview(2, "Danh sách tin"));
         itemExpandablelistviewList1.add(new ItemExpandablelistview(3, "Tin nháp"));
 
-        List<ItemExpandablelistview> itemExpandablelistviewList2 = new ArrayList<>();
-        itemExpandablelistviewList2.add(new ItemExpandablelistview(1, "Đăng mới"));
-        itemExpandablelistviewList2.add(new ItemExpandablelistview(2, "Danh sách tin"));
-        itemExpandablelistviewList2.add(new ItemExpandablelistview(3, "Tin nháp"));
+//        List<ItemExpandablelistview> itemExpandablelistviewList2 = new ArrayList<>();
+//        itemExpandablelistviewList2.add(new ItemExpandablelistview(1, "Đăng mới"));
+//        itemExpandablelistviewList2.add(new ItemExpandablelistview(2, "Danh sách tin"));
+//        itemExpandablelistviewList2.add(new ItemExpandablelistview(3, "Tin nháp"));
 
         List<ItemExpandablelistview> itemExpandablelistviewList3 = new ArrayList<>();
         itemExpandablelistviewList3.add(new ItemExpandablelistview(1, "Thông tin số dư"));
@@ -95,11 +110,12 @@ public class TaiKhoanFragment extends Fragment {
         itemExpandablelistviewList3.add(new ItemExpandablelistview(3, "Nhóm khuyến mãi"));
 
         List<ItemExpandablelistview> itemExpandablelistviewList4 = new ArrayList<>();
-        itemExpandablelistviewList4.add(new ItemExpandablelistview(1, "Quản lý tài khoản"));
-        itemExpandablelistviewList4.add(new ItemExpandablelistview(2, "Đăng xuất"));
+        itemExpandablelistviewList4.add(new ItemExpandablelistview(1, "Quản lý thông tin"));
+        itemExpandablelistviewList4.add(new ItemExpandablelistview(2, "Bảo mật"));
+        itemExpandablelistviewList4.add(new ItemExpandablelistview(3, "Đăng xuất"));
 
         MitemExpandablelistview.put(groupExpandablelistview1, itemExpandablelistviewList1);
-        MitemExpandablelistview.put(groupExpandablelistview2, itemExpandablelistviewList2);
+        //MitemExpandablelistview.put(groupExpandablelistview2, null);
         MitemExpandablelistview.put(groupExpandablelistview3, itemExpandablelistviewList3);
         MitemExpandablelistview.put(groupExpandablelistview4, itemExpandablelistviewList4);
 

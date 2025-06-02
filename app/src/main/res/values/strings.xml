@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppQLPhongTro</string>
+    <string name="yeucauxoataikhoan">Gửi yêu cầu xoá toàn bộ thông tin tài khoản. Sau khi được xử lý, toan bộ thông tin sẽ được xoá và không thể hoàn tác. Các thông tin trong tài khoản này không được tạo tài khoản mới trong 90 ngày</string>
+    <string name="xacnhan_xoataikhoan">Bạn đã đọc kỹ nội dung và vẫn muốn xoá tài khoản?</string>
 </resources>
