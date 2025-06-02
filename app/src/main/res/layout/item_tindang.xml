@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@android:color/white"
+    android:gravity="center_vertical">
+
+    <!-- Ảnh phòng -->
+    <ImageView
+        android:id="@+id/imgPhong"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/matketnoi" />
+
+    <!-- Phần thông tin bên phải -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp">
+
+        <TextView
+            android:id="@+id/tvTieuDe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cho thuê phòng trọ sạch sẽ, chung chủ"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp">
+
+            <!-- Địa chỉ bên trái -->
+            <TextView
+                android:id="@+id/tvDiaChi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hà Nội"
+                android:textSize="14sp" />
+
+            <!-- Zalo + SĐT bên phải -->
+            <TextView
+                android:id="@+id/tvZalo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zalo: 0936205xxx"
+                android:textSize="14sp"
+                android:textColor="#0288D1"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tvGia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.000.000đ/tháng"
+            android:textSize="14sp"
+            android:textColor="#D32F2F"
+            android:paddingTop="2dp"/>
+    </LinearLayout>
+</LinearLayout>
+
