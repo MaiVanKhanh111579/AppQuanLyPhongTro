@@ -35,10 +35,18 @@
         <action
             android:id="@+id/action_taiKhoanFragment_to_qLThongTinTKFragment"
             app:destination="@id/qLThongTinTKFragment"/>
+        <action
+            android:id="@+id/action_navigation_taikhoan_to_navigation_taikhoan_baomat"
+            app:destination="@id/navigation_taikhoan_baomat" />
     </fragment>
     <fragment
         android:id="@+id/qLThongTinTKFragment"
         android:name="com.example.appqlphongtro.taikhoan.qlthongtintk.QLThongTinTKFragment"
         android:label="Quản lý tài khoản"
         tools:layout="@layout/fragment_qlthongtintk"/>
+    <fragment
+        android:id="@+id/navigation_taikhoan_baomat"
+        android:name="com.example.appqlphongtro.taikhoan.qlthongtintk.BaoMatFragment"
+        tools:layout="@layout/fragment_taikhoan_baomat"
+        android:label="Bảo Mật"/>
 </navigation>
