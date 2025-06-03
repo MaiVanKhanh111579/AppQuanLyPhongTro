@@ -6,24 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.appqlphongtro.R;
 import com.example.appqlphongtro.taikhoan.ExpandablelistAdapter;
 import com.example.appqlphongtro.taikhoan.GroupExpandablelistview;
 import com.example.appqlphongtro.taikhoan.ItemExpandablelistview;
-import com.example.appqlphongtro.taikhoan.qlthongtintk.QLThongTinTKFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,11 +40,12 @@ public class TaiKhoanFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_taikhoan,container, false);
         bottomNavigationView = getActivity().findViewById(R.id.bottom_nav);
         bottomNavigationView.setVisibility(View.VISIBLE);
+
         expandableListView = view.findViewById(R.id.expandablelistview_taikhoan);
         mitemExpandablelistview = getMitemExpandablelistview();
         mgroupExpandablelistview = new ArrayList<>(mitemExpandablelistview.keySet());
-        expandableListView.setGroupIndicator(null);
 
+        expandableListView.setGroupIndicator(null);
         expandablelistAdapter = new ExpandablelistAdapter(mgroupExpandablelistview,mitemExpandablelistview);
         expandableListView.setAdapter(expandablelistAdapter);
         expandableListView.setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
@@ -83,6 +81,12 @@ public class TaiKhoanFragment extends Fragment {
 
             }
             return true;
+        });
+
+        LinearLayout btn_chuyendoitaikhoan = view.findViewById(R.id.llayout_taikhoan_chuyendoitaikhoan);
+        btn_chuyendoitaikhoan.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_navigation_taikhoan_to_navigation_timkiem);
+            bottomNavigationView.setVisibility(View.GONE);
         });
 
         return view;

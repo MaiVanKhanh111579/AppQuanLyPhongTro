@@ -29,13 +29,13 @@
         android:id="@+id/fabThemKhach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
+        android:contentDescription="Thêm khách hàng mới"
+        android:onClick="chuyenSangThemKhach"
         android:src="@drawable/ic_cong"
         app:backgroundTint="@android:color/holo_blue_light"
         app:tint="@android:color/white"
-        android:contentDescription="Thêm khách hàng mới"
-        android:onClick="chuyenSangThemKhach"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,ImageContrastCheck" />
 </RelativeLayout>

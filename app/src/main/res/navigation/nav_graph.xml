@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_tongquan">
+    app:startDestination="@id/navigation_tongquan"
+    tools:ignore="InvalidNavigation">
 
+    <!--!!!!!!!!!TÀI KHOẢN ĐĂNG TIN!!!!!!!!!-->
     <!--TỔNG QUAN-->
     <fragment
         android:id="@+id/navigation_tongquan"
@@ -51,6 +53,9 @@
         <action
             android:id="@+id/action_navigation_taikhoan_to_navigation_thongtinsodu"
             app:destination="@id/navigation_thongtinsodu" />
+        <action
+            android:id="@+id/action_navigation_taikhoan_to_navigation_timkiem"
+            app:destination="@id/navigation_main_timkiem" />
     </fragment>
     <fragment
         android:id="@+id/qLThongTinTKFragment"
@@ -72,4 +77,15 @@
         android:name="com.example.appqlphongtro.taikhoan.qltaichinh.ThongTinSoDuFragment"
         tools:layout="@layout/fragment_thongtinsodu"
         android:label="Thông tin số dư"/>
+
+
+    <!--!!!!!!!!!TÀI KHOẢN TÌM KIẾM!!!!!!!!!-->
+
+    <!--Fragment chứa Bottom Navigation-->
+    <fragment
+        android:id="@+id/navigation_main_timkiem"
+        android:name="com.example.appqlphongtro.bottomnavigation.bottomTimkiem.BottomNavigation_TimKiem"
+        tools:layout="@layout/fragment_main_taikhoan_timkiem"
+        android:label="Tài khoản tìm kiếm"/>
+
 </navigation>
