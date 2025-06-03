@@ -12,7 +12,7 @@
         android:title="Tin đăng"
         tools:ignore="HardcodedText" />
     <item
-        android:id="@+id/item_nav_pluscircle"
+        android:id="@+id/navigation_dangtinnew"
         android:enabled="true"
         android:icon="@drawable/ic_pluscircle_red"
         android:title="Đăng tin"

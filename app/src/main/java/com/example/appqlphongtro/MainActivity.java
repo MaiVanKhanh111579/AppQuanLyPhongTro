@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.navigation_tindang) {
                 navController.navigate(R.id.navigation_tindang);
                 return true;
+            } else if (item.getItemId() == R.id.navigation_dangtinnew) {
+                navController.navigate(R.id.navigation_dangtinnew);
+                return true;
             } else if (item.getItemId() == R.id.navigation_khachhang) {
                 navController.navigate(R.id.navigation_khachhang);
                 return true;
@@ -44,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 navController.navigate(R.id.navigation_taikhoan);
                 return true;
             } else navController.navigate(R.id.navigation_tongquan);
-            // xử lý các item khác
             return false;
         });
 

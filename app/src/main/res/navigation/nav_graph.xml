@@ -19,6 +19,13 @@
         android:label="Tin đăng"
         tools:layout="@layout/fragment_tindang"/>
 
+    <!--TIN ĐĂNG-->
+    <fragment
+        android:id="@+id/navigation_dangtinnew"
+        android:name="com.example.appqlphongtro.bottomnavigation.bottomDangTin.DangTinNewFragment"
+        android:label="Tin đăng"
+        tools:layout="@layout/fragment_dangtinnew"/>
+
     <!--KHÁCH HÀNG-->
     <fragment
         android:id="@+id/navigation_khachhang"
