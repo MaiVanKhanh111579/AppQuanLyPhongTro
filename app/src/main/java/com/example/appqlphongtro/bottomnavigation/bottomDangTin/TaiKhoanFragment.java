@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.appqlphongtro.R;
@@ -19,6 +20,7 @@ import com.example.appqlphongtro.taikhoan.ExpandablelistAdapter;
 import com.example.appqlphongtro.taikhoan.GroupExpandablelistview;
 import com.example.appqlphongtro.taikhoan.ItemExpandablelistview;
 import com.example.appqlphongtro.taikhoan.qlthongtintk.QLThongTinTKFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,13 +34,15 @@ public class TaiKhoanFragment extends Fragment {
     private List<GroupExpandablelistview> mgroupExpandablelistview;
     private Map<GroupExpandablelistview, List<ItemExpandablelistview>> mitemExpandablelistview;
     private ExpandablelistAdapter expandablelistAdapter;
+    private BottomNavigationView bottomNavigationView;
 
     @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_taikhoan,container, false);
-
+        bottomNavigationView = getActivity().findViewById(R.id.bottom_nav);
+        bottomNavigationView.setVisibility(View.VISIBLE);
         expandableListView = view.findViewById(R.id.expandablelistview_taikhoan);
         mitemExpandablelistview = getMitemExpandablelistview();
         mgroupExpandablelistview = new ArrayList<>(mitemExpandablelistview.keySet());
@@ -66,13 +70,11 @@ public class TaiKhoanFragment extends Fragment {
                 Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
 
             } else if (item.getName().equals("Tin nháp")) {
-                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
-
+                Navigation.findNavController(v).navigate(R.id.action_navigation_taikhoan_to_navigation_tinnhap);
             }
             //--QUẢN LÝ TÀI CHÍNH--\\
             else if (item.getName().equals("Thông tin số dư")) {
-                Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
-
+                Navigation.findNavController(v).navigate(R.id.action_navigation_taikhoan_to_navigation_thongtinsodu);
             } else if (item.getName().equals("Lịch sử giao dịch")) {
                 Toast.makeText(getContext(), "Điều hướng đang cập nhật", Toast.LENGTH_SHORT).show();
 

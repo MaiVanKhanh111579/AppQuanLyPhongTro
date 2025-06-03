@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:paddingTop="30dp"
+    android:paddingTop="50dp"
     tools:ignore="RtlHardcoded,RtlSymmetry,VisualLintBounds">
 
     <LinearLayout
@@ -26,17 +26,16 @@
             android:background="@drawable/customer_circle_avatar"
             android:src="@drawable/ic_launcher_foreground"
             tools:ignore="ContentDescription,RtlHardcoded" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/txt_taikhoan_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="User Name"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
@@ -47,10 +46,30 @@
                 android:text="0 điểm"
                 android:textColor="@color/black"
                 android:textSize="14dp"
-                tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+                tools:ignore="HardcodedText,SpUsage,TextSizeCheck"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mã tài khoản: "
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    tools:ignore="HardcodedText"/>
+                <TextView
+                    android:id="@+id/txt_taikhoan_mataikhoan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HCM00001"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/LLayout_sodutaikhoan"
         android:layout_width="match_parent"
@@ -115,7 +134,7 @@
                 android:layout_alignParentEnd="true"
                 tools:ignore="HardcodedText,ObsoleteLayoutParam" />
         </RelativeLayout>
-        <RelativeLayout
+        <!--<RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -135,6 +154,41 @@
                 android:text="0"
                 android:layout_alignParentEnd="true"
                 tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+        </RelativeLayout>-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/customer_retangle_border"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:id="@+id/txt_taikhoan_machuyenkhoan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Mã chuyển khoản"
+                android:textColor="@color/grey8080"
+                android:textSize="12dp"
+                tools:ignore="HardcodedText,ObsoleteLayoutParam,SpUsage,TextContrastCheck,TextSizeCheck" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HCM00001"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/txt_taikhoan_machuyenkhoan"
+                tools:ignore="HardcodedText"/>
+
+            <ImageButton
+                android:id="@+id/imgbtn_taikhoan_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@color/white"
+                android:src="@drawable/ic_copy_black"
+                tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         </RelativeLayout>
     </LinearLayout>
     <LinearLayout
@@ -142,7 +196,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LLayout_sodutaikhoan"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:backgroundTint="@color/greyEEEEEE"
         android:background="@drawable/customer_retangle_border"

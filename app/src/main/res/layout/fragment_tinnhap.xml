@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:scrollbars="none"
+    android:orientation="vertical"
+    tools:ignore="ScrollViewCount"
+    android:paddingTop="40dp"
+    android:id="@+id/fragment_tinnhap">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/greyEEEEEE"
+        android:scrollbars="none"
+        tools:ignore="ScrollViewCount">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="ScrollViewSize">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrainlayout_backStack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_alignParentTop="true"
+                tools:ignore="Orientation,RtlHardcoded,RtlSymmetry">
+                <ImageButton
+                    android:id="@+id/btn_tinnhap_backStack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/ic_closecircle2_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/greyAAA"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/llayout_tinnhap_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/constrainlayout_backStack"
+                android:background="@color/white"
+                android:padding="15dp"
+                android:orientation="vertical"
+                tools:ignore="Orientation">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tin nháp"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -45,6 +45,12 @@
         <action
             android:id="@+id/action_navigation_taikhoan_to_navigation_taikhoan_baomat"
             app:destination="@id/navigation_taikhoan_baomat" />
+        <action
+            android:id="@+id/action_navigation_taikhoan_to_navigation_tinnhap"
+            app:destination="@id/navigation_tinnhap" />
+        <action
+            android:id="@+id/action_navigation_taikhoan_to_navigation_thongtinsodu"
+            app:destination="@id/navigation_thongtinsodu" />
     </fragment>
     <fragment
         android:id="@+id/qLThongTinTKFragment"
@@ -56,4 +62,14 @@
         android:name="com.example.appqlphongtro.taikhoan.qlthongtintk.BaoMatFragment"
         tools:layout="@layout/fragment_taikhoan_baomat"
         android:label="Bảo Mật"/>
+    <fragment
+        android:id="@+id/navigation_tinnhap"
+        android:name="com.example.appqlphongtro.taikhoan.qltindang.TinNhapFragment"
+        tools:layout="@layout/fragment_tinnhap"
+        android:label="Tin Nháp"/>
+    <fragment
+        android:id="@+id/navigation_thongtinsodu"
+        android:name="com.example.appqlphongtro.taikhoan.qltaichinh.ThongTinSoDuFragment"
+        tools:layout="@layout/fragment_thongtinsodu"
+        android:label="Thông tin số dư"/>
 </navigation>
