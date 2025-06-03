@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greyEEEEEE"
+    android:background="@color/white"
     android:scrollbars="none"
     android:orientation="vertical"
     tools:ignore="ScrollViewCount"
@@ -14,11 +14,11 @@
         android:layout_height="match_parent"
         android:background="@color/greyEEEEEE"
         android:scrollbars="none"
+        android:layout_marginTop="40dp"
         tools:ignore="ScrollViewCount">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="20dp"
             android:background="@null"
             tools:ignore="ScrollViewSize,UselessLeaf">
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bảo mật"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +97,7 @@
                     android:layout_marginBottom="5dp"
                     android:text="Mật khẩu hiện tại"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
@@ -117,7 +117,7 @@
                     android:layout_marginBottom="5dp"
                     android:text="Mật khẩu mới"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
@@ -137,7 +137,7 @@
                     android:layout_marginBottom="5dp"
                     android:text="Nhập lại mật khẩu"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
@@ -218,7 +218,7 @@
                     android:layout_marginBottom="5dp"
                     android:text="Nhập mật khẩu hiện tại"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
                 <EditText
