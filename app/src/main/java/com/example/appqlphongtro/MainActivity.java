@@ -9,6 +9,9 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 import androidx.viewpager2.widget.ViewPager2;
+import android.content.Intent;
+import android.view.View;
+import androidx.appcompat.app.AlertDialog;
 
 
 import com.example.appqlphongtro.bottomnavigation.bottomDangTin.ViewPagerAdapter;
@@ -104,5 +107,11 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
 
+    }
+    public void chuyenSangThemKhach(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_them_khach_hang, null);
+        builder.setView(dialogView);
+        builder.show();
     }
 }

@@ -1,15 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_dangtinnew"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_dangtinnew">
+    android:padding="16dp">
+
     <TextView
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="ĐĂNG TIN MỚI"
         android:textSize="30sp"
-        android:layout_centerInParent="true"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:id="@+id/input_fields_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập nội dung"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/editTextNoiDung"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="top"
+            android:hint="Mô tả chi tiết về phòng trọ..."
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/editTextDiaChi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Nhập địa chỉ cụ thể"
+            android:inputType="textPostalAddress"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giá phòng / tháng"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/editTextGiaPhong"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Ví dụ: 2500000"
+            android:inputType="numberDecimal"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số người / phòng"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/editTextSoNguoi"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Ví dụ: 2"
+            android:inputType="number"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonDangTai"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="173dp"
+        android:text="Đăng tải"
+        android:textSize="18sp"
+        tools:ignore="HardcodedText" />
+
 </RelativeLayout>
